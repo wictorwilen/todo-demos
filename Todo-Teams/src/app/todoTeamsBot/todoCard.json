@@ -1,0 +1,34 @@
+{
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "large",
+            "weight": "bolder",
+            "text": "SUBJECT"
+        },
+        {
+            "type": "TextBlock",
+            "text": "STATUS",
+            "isSubtle": true
+        },
+        {
+            "type": "TextBlock",
+            "spacing": "None",
+            "text": "IMPORTANCE",
+            "isSubtle": true
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Complete",
+            "data": {
+                "x": "complete",
+                "id": "xxx"
+            }
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.0"
+}

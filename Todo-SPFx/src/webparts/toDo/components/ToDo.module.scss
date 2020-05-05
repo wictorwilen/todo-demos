@@ -1,0 +1,19 @@
+
+.toDo {
+  .taskContainer {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: flex-end;
+    
+    div {
+      margin: 16px;
+    }
+    .inDaTeam {
+      background-color: "[theme: themePrimary, default: #0078d7]";  
+    }
+  }
+}

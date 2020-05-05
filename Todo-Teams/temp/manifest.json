@@ -1,0 +1,139 @@
+{
+  "$schema": "https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/preview/DevPreview/MicrosoftTeams.schema.json",
+  "manifestVersion": "devPreview",
+  "id": "a95a647a-ed00-f81a-7a51-92cda94ae707",
+  "version": "0.0.2",
+  "packageName": "io.ngrok.todo-teams",
+  "developer": {
+    "name": "Avanade",
+    "websiteUrl": "https://todo-teams.ngrok.io",
+    "privacyUrl": "https://todo-teams.ngrok.io/privacy.html",
+    "termsOfUseUrl": "https://todo-teams.ngrok.io/tou.html"
+  },
+  "name": {
+    "short": "Todo Teams",
+    "full": "Todo Teams"
+  },
+  "description": {
+    "short": "TODO: add short description here",
+    "full": "TODO: add full description here"
+  },
+  "icons": {
+    "outline": "icon-outline.png",
+    "color": "icon-color.png"
+  },
+  "accentColor": "#D85028",
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://todo-teams.ngrok.io/todoTeamsTab/config.html",
+      "canUpdateConfiguration": true,
+      "scopes": [
+        "team",
+        "groupchat"
+      ]
+    }
+  ],
+  "staticTabs": [
+    {
+      "entityId": "todoTeamsFaqTab",
+      "name": "FAQ",
+      "contentUrl": "https://todo-teams.ngrok.io/todoTeamsBot/faq.html",
+      "scopes": [
+        "personal"
+      ]
+    },
+    {
+      "entityId": "todoTeamsMyTasks",
+      "name": "My Tasks",
+      "contentUrl": "https://todo-teams.ngrok.io/todoTeamsTab/index.html",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "bots": [
+    {
+      "botId": "d9606bbf-7ca0-4ae5-bf25-2484483e88cd",
+      "needsChannelSelector": true,
+      "isNotificationOnly": false,
+      "scopes": [
+        "team",
+        "personal",
+        "groupchat"
+      ],
+      "commandLists": [
+        {
+          "scopes": [
+            "team",
+            "personal"
+          ],
+          "commands": [
+            {
+              "title": "Help",
+              "description": "Shows help information"
+            }
+          ]
+        }
+      ],
+      "supportsCalling": true,
+      "supportsFiles": true,
+      "supportsVideo": true
+    }
+  ],
+  "connectors": [
+    {
+      "connectorId": "b701e647-815e-440e-a94a-1f971854b7ce",
+      "configurationUrl": "https://todo-teams.ngrok.io/todoTeamsConnector/config.html",
+      "scopes": [
+        "team"
+      ]
+    }
+  ],
+  "composeExtensions": [
+    {
+      "botId": "d9606bbf-7ca0-4ae5-bf25-2484483e88cd",
+      "canUpdateConfiguration": true,
+      "commands": [
+        {
+          "id": "todoTeamsMessageExtension",
+          "title": "Todo Teams",
+          "description": "Add a clever description here",
+          "initialRun": true,
+          "parameters": [
+            {
+              "name": "parameter",
+              "description": "Description of the parameter",
+              "title": "Parameter"
+            }
+          ],
+          "type": "query",
+          "fetchTask": true
+        },
+        {
+          "id": "createToDoMessageExtension",
+          "title": "Create To-Do",
+          "description": "Create a To-Do item",
+          "context": ["message", "commandBox", "compose"], 
+          "fetchTask": true,
+          "parameters": [
+            {
+              "name": "dueDate",
+              "title": "Due Date",
+              "inputType": "date"
+            }
+          ],
+          "type": "action"
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "todo-teams.ngrok.io",
+    "token.botframework.com",
+    "login.microsoftonline.com"
+  ]
+}

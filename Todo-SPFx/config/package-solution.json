@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "todo-sp-fx-client-side-solution",
+    "id": "793c9b2b-0b50-48c4-820a-358c8fac2d16",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "webApiPermissionRequests": [{
+      "resource": "Microsoft Graph",
+      "scope": "Tasks.ReadWrite"
+    }]
+  },
+  "paths": {
+    "zippedPackage": "solution/todo-sp-fx.sppkg"
+  }
+}
